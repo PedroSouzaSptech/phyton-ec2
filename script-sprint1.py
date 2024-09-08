@@ -1,33 +1,35 @@
 import psutil
 import time
 import subprocess
+from datetime import datetime
 
-atualizador = 2  
+data_e_hora_atuais = datetime.now()
+dt= data_e_hora_atuais.strftime("%d/%m/%Y")
+dthora = data_e_hora_atuais.strftime("%d/%m/%Y %H:%M")
 
-i = 0
-
-while i < atualizador:
+while (True):
     
     cpu_percent = psutil.cpu_percent(interval=1)
 
     mem = psutil.virtual_memory()
     total_ram = mem.total
-    used_ram = mem.used
-    free_ram = mem.available
+    ulitilizado_ram = mem.used
+    livre_ram = mem.available
 
-    disk = psutil.disk_usage('/')
-    total_storage = disk.total
-    used_storage = disk.used
-    free_storage = disk.free
+    disco = psutil.disk_usage('/')
+    total_armazenamento = disco.total
+    ultilizado_armazenamento = disco.used
+    livre_armazenamento = disco.free
 
+    print(dthora)
     print(f"CPU usada: {cpu_percent}%")
     print(f"Total de RAM: {total_ram / (1024 ** 3):.2f} GB")
-    print(f"RAM usada: {used_ram / (1024 ** 3):.2f} GB")
-    print(f"RAM livre: {free_ram / (1024 ** 3):.2f} GB")
-    print(f"Armazenamento total: {total_storage / (1024 ** 3):.2f} GB")
-    print(f"Armazenamento usado: {used_storage / (1024 ** 3):.2f} GB")
-    print(f"Armazenamento livre: {free_storage / (1024 ** 3):.2f} GB")
-    print("-------------------------------------------------------------")
+    print(f"RAM usada: {ulitilizado_ram / (1024 ** 3):.2f} GB")
+    print(f"RAM livre: {livre_ram / (1024 ** 3):.2f} GB")
+    print(f"Armazenamento total: {total_armazenamento / (1024 ** 3):.2f} GB")
+    print(f"Armazenamento usado: {ultilizado_armazenamento / (1024 ** 3):.2f} GB")
+    print(f"Armazenamento livre: {livre_armazenamento / (1024 ** 3):.2f} GB")
+    print("------------------------------")
 
     time.sleep(5)
    
