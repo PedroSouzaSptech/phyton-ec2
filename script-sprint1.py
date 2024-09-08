@@ -27,6 +27,7 @@ while i < atualizador:
     print(f"Armazenamento total: {total_storage / (1024 ** 3):.2f} GB")
     print(f"Armazenamento usado: {used_storage / (1024 ** 3):.2f} GB")
     print(f"Armazenamento livre: {free_storage / (1024 ** 3):.2f} GB")
+    print("-------------------------------------------------------------")
 
     time.sleep(5)
    
