@@ -3,11 +3,11 @@ import time
 import subprocess
 from datetime import datetime
 
-data_e_hora_atuais = datetime.now()
-dt= data_e_hora_atuais.strftime("%d/%m/%Y")
-dthora = data_e_hora_atuais.strftime("%d/%m/%Y %H:%M")
-
 while (True):
+
+    data_e_hora_atuais = datetime.now()
+    dt= data_e_hora_atuais.strftime("%d/%m/%Y")
+    dthora = data_e_hora_atuais.strftime("%d/%m/%Y %H:%M")
     
     cpu_percent = psutil.cpu_percent(interval=1)
 
