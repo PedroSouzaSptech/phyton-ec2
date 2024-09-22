@@ -31,5 +31,5 @@ while (True):
     print(f"Armazenamento livre: {livre_armazenamento / (1024 ** 3):.2f} GB")
     print("------------------------------")
 
-    time.sleep(60)
+    time.sleep(5)
    
